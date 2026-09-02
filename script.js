@@ -497,14 +497,22 @@ const CATEGORIES = [
 
   // ---- Ações ----
   function actionNext() {
+    // Jogador concluiu a jogada: adiciona pontos, mostra confete e passa a vez
+    state.score += 10;
+    updateHUD();
+    showToast("Desafio concluído! +10 pontos");
+    burstParticles();
     nextTurn();
     drawCard();
   }
 
   function actionAnother() {
+    // Trocar de carta penaliza pontuação
+    state.score = Math.max(0, state.score - 1);
+    updateHUD();
     state.cardNum--; // não conta como jogada nova no índice
     drawCard();
-    showToast("Nova carta sorteada.");
+    showToast("Outra carta — 1 ponto perdido.");
   }
 
   function actionSkip() {
@@ -656,8 +664,6 @@ const CATEGORIES = [
     // Ações do jogo
     $("#nextBtn").addEventListener("click", actionNext);
     $("#anotherBtn").addEventListener("click", actionAnother);
-    $("#skipBtn").addEventListener("click", actionSkip);
-    $("#scoreBtn").addEventListener("click", actionScore);
     $("#restartBtn").addEventListener("click", actionRestart);
 
     // Tecla ESC fecha modal
