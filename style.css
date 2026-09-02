@@ -657,7 +657,6 @@ button { background: none; border: none; cursor: pointer; }
   border-radius: 28px;
   background: linear-gradient(180deg, rgba(255,245,248,0.04) 0%, rgba(23,9,16,0.22) 100%);
   border: 1px solid rgba(255,245,248,0.06);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 18px rgba(194,24,91,0.06) inset;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   display: flex;
@@ -665,11 +664,7 @@ button { background: none; border: none; cursor: pointer; }
   align-items: center;
   text-align: center;
   gap: 28px;
-  transform-style: preserve-3d;
-  transition: box-shadow var(--t-mid) var(--ease), transform var(--t-mid) var(--ease);
 }
-.card.is-flip-in { animation: cardIn 0.5s var(--ease) both; }
-.card.is-flip-out { animation: cardOut 0.3s var(--ease) both; }
 
 @keyframes cardIn {
   0%   { opacity: 0; transform: rotateY(90deg) translateY(10px) scale(0.95); }
@@ -718,13 +713,13 @@ button { background: none; border: none; cursor: pointer; }
 }
 
 .card-position-image {
-  width: 120px; height: 120px; object-fit: cover; border-radius: 16px;
+  width: 160px; height: 160px; object-fit: cover; border-radius: 18px;
   box-shadow: 0 20px 60px rgba(194,24,91,0.18), 0 0 28px rgba(233,30,99,0.08);
   border: 1px solid rgba(255,255,255,0.04);
 }
 .card-position-placeholder {
-  width: 120px; height: 120px; display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 16px; color: var(--muted); background: rgba(255,255,255,0.02);
+  width: 160px; height: 160px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 18px; color: var(--muted); background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.03);
 }
 .card-int {
@@ -741,18 +736,25 @@ button { background: none; border: none; cursor: pointer; }
 }
 .card-int .int-icon { display: inline-flex; width:18px; height:18px; color: var(--red-300); filter: drop-shadow(0 6px 18px rgba(233,30,99,0.18)); }
 .card-icon {
-  font-size: 5.2rem;
+  font-size: 6.4rem;
   line-height: 1;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 22px;
   color: #ffd6e8;
   filter: drop-shadow(0 10px 40px rgba(233,30,99,0.28));
   background: radial-gradient(circle at 30% 20%, rgba(233,30,99,0.08), transparent 35%);
   animation: floatIcon 3s var(--ease-soft) infinite alternate;
+}
+
+/* Ensure SVG icons inside the card scale to the container */
+.card-icon svg {
+  width: 72%;
+  height: 72%;
+  display: block;
 }
 @keyframes floatIcon {
   from { transform: translateY(0); }
@@ -809,8 +811,8 @@ button { background: none; border: none; cursor: pointer; }
   font-weight: 500;
 }
 
-/* Hover / focus subtle lift */
-.card:hover { transform: translateY(-6px); box-shadow: 0 40px 110px rgba(0,0,0,0.65), 0 0 30px rgba(233,30,99,0.06) inset; }
+/* Hover / focus subtle lift — disabled per user request */
+.card:hover { transform: none; box-shadow: none; }
 
 /* Action buttons restyle for neon look */
 .game-actions .btn--primary {
@@ -829,7 +831,8 @@ button { background: none; border: none; cursor: pointer; }
 /* smaller screens: keep layout compact */
 @media (max-width: 420px) {
   .card { padding: 22px 18px; min-height: 320px; max-width: 92%; }
-  .card-icon { width: 92px; height: 92px; font-size: 4.2rem; }
+  .card-icon { width: 128px; height: 128px; font-size: 5rem; }
+  .card-icon svg { width: 78%; height: 78%; }
   .card-text { font-size: 1.2rem; max-width: 92%; }
   .card-top { font-size: 0.72rem; }
 }
