@@ -63,7 +63,8 @@
         <div class="setup-inner">
 
           <button class="btn btn--back" data-goto="home" aria-label="Voltar">
-            ← Voltar
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Voltar
           </button>
 
           <h2 class="section-title">Monte o seu jogo</h2>
@@ -183,31 +184,27 @@
           <header class="game-hud">
 
             <button
-              class="btn btn--icon"
+              class="btn btn--ghost btn--sm"
               data-goto="setup"
-              aria-label="Configurações"
+              aria-label="Voltar"
             >
-              ⚙
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+              Voltar
             </button>
 
             <div class="hud-center">
               <span class="hud-round">
                 Rodada <b id="roundCount">1</b>
               </span>
-
-              <span class="hud-divider"></span>
-
-              <span class="hud-score">
-                Pontos <b id="scoreCount">0</b>
-              </span>
             </div>
 
             <button
-              class="btn btn--icon"
+              class="btn btn--ghost btn--sm"
               id="restartBtn"
               aria-label="Reiniciar"
             >
-              ↻
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Reiniciar
             </button>
 
           </header>
@@ -218,6 +215,13 @@
 
             <span class="turn-label">
               Vez de
+            </span>
+
+            <span class="turn-avatar p1" id="turnAvatar" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21a8 8 0 0 0-16 0"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
             </span>
 
             <span
@@ -286,17 +290,6 @@
               Outra
             </button>
 
-          </div>
-
-
-          <div class="game-secondary">
-            <button
-              class="btn btn--ghost btn--sm"
-              data-goto="positions"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-              Posições
-            </button>
           </div>
 
         </div>
@@ -380,10 +373,6 @@
           <li>
             Usem <b>Próximo</b> para avançar e concluir a jogada,
             ou <b>Outra</b> para trocar de carta.
-          </li>
-
-          <li>
-            A pontuação é opcional — somem pontos quando completarem um desafio.
           </li>
 
           <li>

@@ -114,47 +114,231 @@ const CATEGORIES = [
   // Helper para criar cartas
   const card = (cat, int, icon, text) => ({ cat, int, icon, text });
 
+  function formatLabel(value) {
+    if (value === null || value === undefined) return "";
+    const str = String(value).trim();
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
   const CARDS = [
+  // =========================================================
+  // BEIJOS — 40 CARTAS
+  // =========================================================
+
   // ---- BEIJOS / Leve ----
-  card("beijos", "leve", "beijos", "Dê um beijo demorado e molhado no seu parceiro, usando a língua."),
-  card("beijos", "leve", "beijos", "Beije e sugue o pescoço do seu parceiro, deixando uma marca."),
-  card("beijos", "leve", "beijos", "Beije a boca do seu parceiro passando a língua nos lábios dele(a)."),
-  card("beijos", "leve", "beijos", "Beije e morda o lábio inferior do seu parceiro com vontade."),
+
+  card("beijos", "leve", "beijos", "Beije lentamente a boca do seu parceiro durante 20 segundos."),
+  card("beijos", "leve", "beijos", "Dê um beijo demorado no pescoço do seu parceiro."),
+  card("beijos", "leve", "beijos", "Beije o rosto inteiro do seu parceiro, terminando na boca."),
+  card("beijos", "leve", "beijos", "Dê três beijos lentos em lugares escolhidos pelo seu parceiro."),
+  card("beijos", "leve", "beijos", "Beije seu parceiro sem usar as mãos."),
+  card("beijos", "leve", "beijos", "Dê um beijo surpresa no seu parceiro quando ele menos esperar."),
+  card("beijos", "leve", "beijos", "Beije lentamente o pescoço e depois volte para a boca."),
+  card("beijos", "leve", "beijos", "Dê um beijo na testa, um no pescoço e um na boca."),
+  card("beijos", "leve", "beijos", "Beije seu parceiro enquanto mantém uma das mãos no rosto dele(a)."),
+  card("beijos", "leve", "beijos", "Escolha uma parte do corpo do seu parceiro e cubra-a de beijos."),
 
   // ---- BEIJOS / Picante ----
-  card("beijos", "picante", "beijos", "Faça um beijo grego: língua contra língua, profundo e molhado, por 1 minuto."),
-  card("beijos", "picante", "beijos", "Beije todo o corpo do seu parceiro, da boca até a região íntima, descendo devagar."),
-  card("beijos", "picante", "beijos", "Beije e lamba os mamilos do seu parceiro enquanto se beijam."),
-  card("beijos", "picante", "beijos", "Troque beijos quentes e profundos enquanto se tocam por baixo da roupa."),
+
+  card("beijos", "picante", "beijos", "Beije seu parceiro lentamente enquanto aproxima cada vez mais o corpo."),
+  card("beijos", "picante", "beijos", "Beije o pescoço do seu parceiro e termine com uma mordida suave."),
+  card("beijos", "picante", "beijos", "Beijem-se por um minuto sem interromper o contato corporal."),
+  card("beijos", "picante", "beijos", "Comece com um beijo delicado e aumente a intensidade aos poucos."),
+  card("beijos", "picante", "beijos", "Beije seu parceiro enquanto passa lentamente as mãos pelo corpo dele(a)."),
+  card("beijos", "picante", "beijos", "Dê beijos pelo peito do seu parceiro e deixe que ele(a) escolha onde você deve parar."),
+  card("beijos", "picante", "beijos", "Beije seu parceiro no pescoço enquanto sussurra algo provocante."),
+  card("beijos", "picante", "beijos", "Beije lentamente uma região do corpo que normalmente você não beija."),
+  card("beijos", "picante", "beijos", "Seu parceiro fecha os olhos enquanto você decide onde dará cinco beijos."),
+  card("beijos", "picante", "beijos", "Aproxime-se para beijar, pare por alguns segundos e provoque seu parceiro antes de continuar."),
+  card("beijos", "picante", "beijos", "Beije seu parceiro enquanto ele(a) permanece de olhos fechados."),
+  card("beijos", "picante", "beijos", "Dê uma sequência de beijos que começa no pescoço e termina onde seu parceiro escolher."),
+  card("beijos", "picante", "beijos", "Beije seu parceiro lentamente enquanto mantém seu corpo encostado no dele(a)."),
+  card("beijos", "picante", "beijos", "Dê um beijo intenso e depois fique olhando para seu parceiro sem dizer nada."),
 
   // ---- BEIJOS / Intenso ----
-  card("beijos", "intenso", "beijos", "Faça um beijo grego intenso enquanto toca a intimidade do seu parceiro com a mão."),
-  card("beijos", "intenso", "beijos", "Beije a boca do seu parceiro enquanto faz sexo oral nele(a)."),
-  card("beijos", "intenso", "beijos", "Beijem-se com língua e saliva, sem parar, enquanto fazem amor."),
+
+  card("beijos", "intenso", "beijos", "Beije seu parceiro por dois minutos, alternando entre beijos suaves e intensos."),
+  card("beijos", "intenso", "beijos", "Cubra o corpo do seu parceiro com beijos e deixe que ele(a) escolha quando você deve parar."),
+  card("beijos", "intenso", "beijos", "Beije lentamente o peito do seu parceiro enquanto mantém contato visual."),
+  card("beijos", "intenso", "beijos", "Beije seu parceiro enquanto suas mãos exploram lentamente o corpo dele(a)."),
+  card("beijos", "intenso", "beijos", "Dê beijos demorados pelo pescoço e peito do seu parceiro."),
+  card("beijos", "intenso", "beijos", "Seu parceiro fecha os olhos. Você deve escolher uma sequência de beijos para deixá-lo(a) arrepiado(a)."),
+  card("beijos", "intenso", "beijos", "Beije seu parceiro lentamente enquanto sussurra o que mais deseja fazer naquela noite."),
+  card("beijos", "intenso", "beijos", "Comece beijando suavemente e aumente a intensidade até seu parceiro pedir para parar."),
+  card("beijos", "intenso", "beijos", "Dê beijos pelo corpo do seu parceiro e deixe a última região ser escolhida por ele(a)."),
+  card("beijos", "intenso", "beijos", "Finalize esta rodada com o beijo mais intenso que vocês conseguirem criar."),
+
+
+  // =========================================================
+  // INTIMIDADE — 40 CARTAS
+  // =========================================================
 
   // ---- INTIMIDADE / Leve ----
-  card("intimidade", "leve", "intimidade", "Sussurre no ouvido do seu parceiro o que você quer fazer com ele(a) esta noite."),
-  card("intimidade", "leve", "intimidade", "Diga três coisas que você adora no corpo do seu parceiro."),
-  card("intimidade", "leve", "intimidade", "Descreva em detalhes a primeira vez que sentiu desejo pelo seu parceiro."),
-  card("intimidade", "leve", "intimidade", "Olhe nos olhos e diga o que você sente quando ele(a) goza."),
 
-  // ... restante das cartas
+  card("intimidade", "leve", "intimidade", "Diga três coisas no corpo do seu parceiro que você mais gosta."),
+  card("intimidade", "leve", "intimidade", "Conte quando você percebeu que sentia desejo pelo seu parceiro."),
+  card("intimidade", "leve", "intimidade", "Sussurre no ouvido do seu parceiro algo que você acha extremamente atraente nele(a)."),
+  card("intimidade", "leve", "intimidade", "Diga qual parte do corpo do seu parceiro mais chama sua atenção."),
+  card("intimidade", "leve", "intimidade", "Olhem-se nos olhos por 30 segundos sem falar."),
+  card("intimidade", "leve", "intimidade", "Conte qual foi o momento mais romântico que vocês já viveram."),
+  card("intimidade", "leve", "intimidade", "Complete: 'Eu sinto mais vontade de você quando...'"),
+  card("intimidade", "leve", "intimidade", "Diga uma coisa que seu parceiro faz e que imediatamente desperta sua atenção."),
+  card("intimidade", "leve", "intimidade", "Conte qual foi o beijo entre vocês que você mais gostou."),
+  card("intimidade", "leve", "intimidade", "Diga uma fantasia romântica que gostaria de viver com seu parceiro."),
+  card("intimidade", "leve", "intimidade", "Diga qual roupa do seu parceiro você considera mais atraente."),
+  card("intimidade", "leve", "intimidade", "Conte qual situação faz você se sentir mais desejado(a)."),
+  card("intimidade", "leve", "intimidade", "Diga algo que gostaria que seu parceiro fizesse mais vezes."),
+  card("intimidade", "leve", "intimidade", "Sussurre no ouvido do seu parceiro uma frase que faça ele(a) sorrir."),
+
+  // ---- INTIMIDADE / Picante ----
+
+  card("intimidade", "picante", "intimidade", "Sussurre no ouvido do seu parceiro uma fantasia que você nunca contou."),
+  card("intimidade", "picante", "intimidade", "Diga qual situação deixa você mais atraído(a) pelo seu parceiro."),
+  card("intimidade", "picante", "intimidade", "Descreva como seria uma noite perfeita entre vocês."),
+  card("intimidade", "picante", "intimidade", "Escolha uma parte do corpo do seu parceiro para admirar durante 30 segundos."),
+  card("intimidade", "picante", "intimidade", "Fique bem próximo do seu parceiro e diga três coisas que despertam seu desejo."),
+  card("intimidade", "picante", "intimidade", "Conte uma fantasia de casal que você gostaria de experimentar."),
+  card("intimidade", "picante", "intimidade", "Diga qual é o momento em que você sente mais química entre vocês."),
+  card("intimidade", "picante", "intimidade", "Seu parceiro pode fazer uma pergunta íntima e você deve responder sinceramente."),
+  card("intimidade", "picante", "intimidade", "Escolha uma região do corpo do seu parceiro para fazer uma massagem lenta."),
+  card("intimidade", "picante", "intimidade", "Diga ao seu parceiro exatamente o que mais desperta sua vontade de beijá-lo(a)."),
+  card("intimidade", "picante", "intimidade", "Fique frente a frente com seu parceiro e descreva o que mais gosta quando vocês estão sozinhos."),
+  card("intimidade", "picante", "intimidade", "Diga uma coisa que você gostaria de experimentar em uma noite especial."),
+  card("intimidade", "picante", "intimidade", "Passe as mãos lentamente pelos braços, costas e peito do seu parceiro."),
+  card("intimidade", "picante", "intimidade", "Diga no ouvido do seu parceiro uma frase que normalmente teria vergonha de falar."),
+
+  // ---- INTIMIDADE / Intenso ----
+
+  card("intimidade", "intenso", "intimidade", "Conte ao seu parceiro uma fantasia que você realmente gostaria de realizar."),
+  card("intimidade", "intenso", "intimidade", "Diga qual é seu maior desejo para uma noite a dois."),
+  card("intimidade", "intenso", "intimidade", "Fique frente a frente e diga exatamente o que mais deseja viver com seu parceiro."),
+  card("intimidade", "intenso", "intimidade", "Cada um deve revelar algo novo que gostaria de experimentar juntos."),
+  card("intimidade", "intenso", "intimidade", "Descreva detalhadamente seu encontro ideal com seu parceiro."),
+  card("intimidade", "intenso", "intimidade", "Olhe nos olhos do seu parceiro e diga qual é sua maior fantasia envolvendo vocês dois."),
+  card("intimidade", "intenso", "intimidade", "Diga uma coisa que seu parceiro faz que consegue deixar você completamente sem graça."),
+  card("intimidade", "intenso", "intimidade", "Cada um deve escolher uma fantasia do outro e imaginar como seria realizá-la."),
+  card("intimidade", "intenso", "intimidade", "Diga algo que você sempre teve vontade de pedir ao seu parceiro."),
+  card("intimidade", "intenso", "intimidade", "Fique abraçado ao seu parceiro enquanto cada um revela seu maior desejo para aquela noite."),
+
+
+  // =========================================================
+  // DESAFIOS — 40 CARTAS
+  // =========================================================
+
+  // ---- DESAFIOS / Leve ----
+
+  card("desafios", "leve", "desafios", "Dê um abraço apertado no seu parceiro durante 30 segundos."),
+  card("desafios", "leve", "desafios", "Faça seu parceiro sorrir sem usar palavras."),
+  card("desafios", "leve", "desafios", "Dê cinco beijos no rosto do seu parceiro."),
+  card("desafios", "leve", "desafios", "Fique olhando nos olhos do seu parceiro sem rir por 30 segundos."),
+  card("desafios", "leve", "desafios", "Faça uma declaração romântica improvisada."),
+  card("desafios", "leve", "desafios", "Seu parceiro fecha os olhos e você deve surpreendê-lo com um carinho."),
+  card("desafios", "leve", "desafios", "Dê um beijo surpresa no seu parceiro durante a próxima rodada."),
+  card("desafios", "leve", "desafios", "Imite a maneira como seu parceiro demonstra carinho."),
+  card("desafios", "leve", "desafios", "Faça uma dança lenta de 30 segundos com seu parceiro."),
+  card("desafios", "leve", "desafios", "Diga cinco coisas que você ama no seu parceiro."),
+
+  // ---- DESAFIOS / Picante ----
+
+  card("desafios", "picante", "desafios", "Fique a poucos centímetros do seu parceiro por 30 segundos sem beijá-lo."),
+  card("desafios", "picante", "desafios", "Sussurre uma frase provocante no ouvido do seu parceiro."),
+  card("desafios", "picante", "desafios", "Dê três beijos, fazendo cada um durar mais que o anterior."),
+  card("desafios", "picante", "desafios", "Faça uma dança sensual para seu parceiro durante uma música."),
+  card("desafios", "picante", "desafios", "Faça seu parceiro ficar com vergonha usando apenas elogios."),
+  card("desafios", "picante", "desafios", "Passe 30 segundos provocando seu parceiro apenas com olhares."),
+  card("desafios", "picante", "desafios", "Escolha uma região do corpo do seu parceiro para fazer carinho durante 30 segundos."),
+  card("desafios", "picante", "desafios", "Dê um beijo demorado e depois fique em silêncio olhando para seu parceiro."),
+  card("desafios", "picante", "desafios", "Dance bem próximo do seu parceiro até o final da música."),
+  card("desafios", "picante", "desafios", "Seu parceiro fecha os olhos enquanto você decide onde dará três beijos."),
+  card("desafios", "picante", "desafios", "Diga uma frase provocante sem mencionar nenhuma parte do corpo."),
+  card("desafios", "picante", "desafios", "Fique frente a frente com seu parceiro e tente fazê-lo desviar o olhar."),
+  card("desafios", "picante", "desafios", "Faça uma massagem lenta no seu parceiro durante um minuto."),
+  card("desafios", "picante", "desafios", "Escolha uma música e dance lentamente para seu parceiro."),
+
+  // ---- DESAFIOS / Intenso ----
+
+  card("desafios", "intenso", "desafios", "Fique frente a frente com seu parceiro durante um minuto sem falar."),
+  card("desafios", "intenso", "desafios", "Beije seu parceiro e depois diga no ouvido dele(a) algo que deseja viver juntos."),
+  card("desafios", "intenso", "desafios", "Dance lentamente com seu parceiro durante uma música inteira."),
+  card("desafios", "intenso", "desafios", "Seu parceiro escolhe três tipos de carinho que você deverá fazer em sequência."),
+  card("desafios", "intenso", "desafios", "Escolham uma fantasia de casal e descrevam juntos como seria vivê-la."),
+  card("desafios", "intenso", "desafios", "Aproxime-se lentamente do seu parceiro e espere que ele(a) tome a iniciativa do beijo."),
+  card("desafios", "intenso", "desafios", "Durante um minuto, comuniquem-se apenas através de olhares e carinhos."),
+  card("desafios", "intenso", "desafios", "Faça uma dança sensual para seu parceiro sem desviar o olhar."),
+  card("desafios", "intenso", "desafios", "Cada um deve revelar algo que gostaria de experimentar naquela noite."),
+  card("desafios", "intenso", "desafios", "Seu parceiro escolhe uma região do corpo para receber uma sequência de carinhos."),
+  card("desafios", "intenso", "desafios", "Beije seu parceiro lentamente enquanto ele(a) permanece de olhos fechados."),
+  card("desafios", "intenso", "desafios", "Deixe seu parceiro escolher como você deve provocá-lo durante 60 segundos."),
+
+
+  // =========================================================
+  // POSIÇÕES — 40 CARTAS
+  // =========================================================
+
+  // ---- POSIÇÕES / Leve ----
+
+  card("posicoes", "leve", "posições", "Fiquem sentados frente a frente e mantenham as mãos dadas durante um minuto."),
+  card("posicoes", "leve", "posições", "Deitem lado a lado e fiquem abraçados durante 30 segundos."),
+  card("posicoes", "leve", "posições", "Um fica atrás do outro e faz uma massagem suave nos ombros."),
+  card("posicoes", "leve", "posições", "Fiquem frente a frente e troquem um beijo demorado."),
+  card("posicoes", "leve", "posições", "Deitem lado a lado e contem uma coisa que gostam um no outro."),
+  card("posicoes", "leve", "posições", "Um fica sentado enquanto o outro fica de pé à sua frente. Troquem três elogios."),
+  card("posicoes", "leve", "posições", "Fiquem abraçados enquanto um faz carinho no cabelo do outro."),
+  card("posicoes", "leve", "posições", "Sentem-se juntos e encostem a testa por 20 segundos."),
+  card("posicoes", "leve", "posições", "Deitem lado a lado e façam uma sequência de três beijos."),
+  card("posicoes", "leve", "posições", "Escolham uma posição confortável e permaneçam abraçados durante uma música."),
+
+  // ---- POSIÇÕES / Picante ----
+
+  card("posicoes", "picante", "posições", "Um senta no colo do outro e vocês permanecem abraçados por 30 segundos."),
+  card("posicoes", "picante", "posições", "Fiquem sentados frente a frente e beijem-se lentamente."),
+  card("posicoes", "picante", "posições", "Um fica atrás do outro em um abraço enquanto dá beijos no pescoço."),
+  card("posicoes", "picante", "posições", "Deitem lado a lado e façam carinhos sem falar."),
+  card("posicoes", "picante", "posições", "Um fica sentado enquanto o outro se aproxima lentamente para um beijo."),
+  card("posicoes", "picante", "posições", "Um deita enquanto o outro fica ao lado fazendo carinho."),
+  card("posicoes", "picante", "posições", "Fiquem frente a frente e mantenham seus corpos encostados durante 30 segundos."),
+  card("posicoes", "picante", "posições", "Um senta atrás do outro e faz uma massagem lenta nas costas."),
+  card("posicoes", "picante", "posições", "Deitem frente a frente e aproximem os rostos sem se beijar por dez segundos."),
+  card("posicoes", "picante", "posições", "Um fica atrás do outro e sussurra algo provocante no ouvido."),
+  card("posicoes", "picante", "posições", "Escolham uma posição confortável e tentem deixar o outro arrepiado apenas com carinhos."),
+  card("posicoes", "picante", "posições", "Um senta no colo do outro enquanto vocês trocam beijos lentamente."),
+  card("posicoes", "picante", "posições", "Fiquem deitados juntos e deixem que cada um escolha onde o outro receberá carinho."),
+  card("posicoes", "picante", "posições", "Um fica sentado e o outro se aproxima lentamente, mantendo contato visual."),
+
+  // ---- POSIÇÕES / Intenso ----
+
+  card("posicoes", "intenso", "posições", "Um senta no colo do outro e vocês permanecem abraçados enquanto se beijam."),
+  card("posicoes", "intenso", "posições", "Fiquem frente a frente e mantenham contato visual durante um beijo prolongado."),
+  card("posicoes", "intenso", "posições", "Deitem lado a lado e alternem entre beijos e carinhos durante dois minutos."),
+  card("posicoes", "intenso", "posições", "Um fica atrás do outro em um abraço apertado enquanto trocam beijos no pescoço."),
+  card("posicoes", "intenso", "posições", "Um senta enquanto o outro se aproxima lentamente até os dois ficarem bem próximos."),
+  card("posicoes", "intenso", "posições", "Escolham uma posição confortável e passem um minuto explorando diferentes formas de carinho."),
+  card("posicoes", "intenso", "posições", "Fiquem abraçados enquanto cada um sussurra no ouvido do outro um desejo."),
+  card("posicoes", "intenso", "posições", "Um deita enquanto o outro se aproxima lentamente e começa uma sequência de beijos."),
+  card("posicoes", "intenso", "posições", "Sentem-se frente a frente e cada um conduz o ritmo dos beijos durante 30 segundos."),
+  card("posicoes", "intenso", "posições", "Escolham juntos a posição mais confortável e transformem a rodada em um momento de intimidade."),
+  card("posicoes", "intenso", "posições", "Um fica sentado e o outro se aproxima lentamente, mantendo o contato visual até o beijo."),
+  card("posicoes", "intenso", "posições", "Deitem juntos e cada um deve escolher uma forma diferente de provocar o outro sem falar.")
 ];
 
   // ---- Posições de casal (descrição textual, sem nudez) ----
   // Cada: { name, desc, difficulty (1-3), intimacy (1-3), shape (id da silhueta) }
   const POSITIONS = [
-    { name: "Conchinha", desc: "Deitados de lado, um atrás do outro, encaixados como colheres. Permite penetração vaginal ou anal com intimidade e aconchego.", difficulty: 1, intimacy: 3, shape: "spoon" },
-    { name: "Olhos nos Olhos", desc: "Um de frente para o outro, deitados de lado. Permite beijos profundos, carícias e conexão visual durante a penetração.", difficulty: 1, intimacy: 3, shape: "face" },
-    { name: "Missão Serena", desc: "Um por cima do outro, frente a frente. Clássica, permite penetração profunda, beijos e contato total dos corpos.", difficulty: 2, intimacy: 3, shape: "missionary" },
-    { name: "Cavaleira", desc: "Um sentado, o outro no colo de frente. Quem está por cima controla o ritmo e a profundidade da penetração.", difficulty: 2, intimacy: 3, shape: "lap" },
-    { name: "Encontro Sentado", desc: "Sentados frente a frente, pernas entrelaçadas. Ritmo lento, penetração profunda e muito contato visual.", difficulty: 2, intimacy: 3, shape: "seated" },
-    { name: "Costas com Carinho", desc: "Um de quatro, o outro por trás. Permite penetração vaginal ou anal com controle total do ritmo.", difficulty: 2, intimacy: 2, shape: "back" },
-    { name: "Equilíbrio Profundo", desc: "Um deitado na borda da cama, o outro em pé. Profundidade máxima na penetração, com apoio e intensidade.", difficulty: 3, intimacy: 2, shape: "edge" },
-    { name: "Abraço em Pé", desc: "Em pé, um sustenta o outro contra a parede. Paixão, força e penetração intensa e espontânea.", difficulty: 3, intimacy: 3, shape: "wall" },
-    { name: "Sessenta e Nove", desc: "Deitados de lado, um de cabeça para os pés do outro. Sexo oral simultâneo, com prazer mútuo.", difficulty: 2, intimacy: 3, shape: "seated" },
-    { name: "Cavalgada Reversa", desc: "Um deitado, o outro por cima de costas. Visão diferente e controle total do ritmo para quem está por cima.", difficulty: 2, intimacy: 2, shape: "lap" },
+    { name: "Conchinha", desc: "Deitados de lado, um atrás do outro, encaixados como colheres. Permite penetração vaginal ou anal com intimidade e aconchego.", difficulty: 1, intimacy: 3, shape: "spoon", positionImage: "" },
+    { name: "Olhos nos Olhos", desc: "Um de frente para o outro, deitados de lado. Permite beijos profundos, carícias e conexão visual durante a penetração.", difficulty: 1, intimacy: 3, shape: "face", positionImage: "" },
+    { name: "Missão Serena", desc: "Um por cima do outro, frente a frente. Clássica, permite penetração profunda, beijos e contato total dos corpos.", difficulty: 2, intimacy: 3, shape: "missionary", positionImage: "" },
+    { name: "Cavaleira", desc: "Um sentado, o outro no colo de frente. Quem está por cima controla o ritmo e a profundidade da penetração.", difficulty: 2, intimacy: 3, shape: "lap", positionImage: "" },
+    { name: "Encontro Sentado", desc: "Sentados frente a frente, pernas entrelaçadas. Ritmo lento, penetração profunda e muito contato visual.", difficulty: 2, intimacy: 3, shape: "seated", positionImage: "" },
+    { name: "Costas com Carinho", desc: "Um de quatro, o outro por trás. Permite penetração vaginal ou anal com controle total do ritmo.", difficulty: 2, intimacy: 2, shape: "back", positionImage: "" },
+    { name: "Equilíbrio Profundo", desc: "Um deitado na borda da cama, o outro em pé. Profundidade máxima na penetração, com apoio e intensidade.", difficulty: 3, intimacy: 2, shape: "edge", positionImage: "" },
+    { name: "Abraço em Pé", desc: "Em pé, um sustenta o outro contra a parede. Paixão, força e penetração intensa e espontânea.", difficulty: 3, intimacy: 3, shape: "wall", positionImage: "" },
+    { name: "Sessenta e Nove", desc: "Deitados de lado, um de cabeça para os pés do outro. Sexo oral simultâneo, com prazer mútuo.", difficulty: 2, intimacy: 3, shape: "seated", positionImage: "" },
+    { name: "Cavalgada Reversa", desc: "Um deitado, o outro por cima de costas. Visão diferente e controle total do ritmo para quem está por cima.", difficulty: 2, intimacy: 2, shape: "lap", positionImage: "" },
   ];
+
+  // URL padrão para imagens de posições (pode ser alterada dinamicamente)
+  const DEFAULT_POSITION_IMAGE = "https://static1.minhavida.com.br/articles/b1/80/b4/e3/15-posicao-sexual-orig-1.jpg";
 
   /* ============================================================
      2. SILHUETAS — SVGs abstratos e estilizados (sem nudez)
@@ -189,7 +373,6 @@ const CATEGORIES = [
     drawIndex: 0,    // próxima posição do deck embaralhado
     round: 1,
     cardNum: 0,
-    score: 0,
     turn: 1,         // 1 ou 2
     currentCard: null,
   };
@@ -245,6 +428,24 @@ const CATEGORIES = [
     t.classList.add("is-show");
     clearTimeout(showToast._t);
     showToast._t = setTimeout(() => t.classList.remove("is-show"), ms);
+  }
+
+  /* Ajusta dinamicamente o tamanho do texto da carta para evitar overflow
+     Adiciona classes `text--small` ou `text--xsmall` quando necessário. */
+  function adjustCardText() {
+    const el = $("#cardText");
+    if (!el) return;
+    el.classList.remove("text--small", "text--xsmall");
+    // Se couber, nada a fazer
+    if (el.scrollHeight <= el.clientHeight) return;
+
+    // Primeiro nível de redução
+    el.classList.add("text--small");
+    if (el.scrollHeight <= el.clientHeight) return;
+
+    // Segundo nível de redução
+    el.classList.remove("text--small");
+    el.classList.add("text--xsmall");
   }
 
   /* ============================================================
@@ -351,9 +552,25 @@ const CATEGORIES = [
     const maxIdx = intOrder.indexOf(intId);
     const allowedInts = intOrder.slice(0, maxIdx + 1);
 
-    const filtered = CARDS.filter(
+    // Filtra cartas estáticas
+    let filtered = CARDS.filter(
       (c) => cats.includes(c.cat) && allowedInts.includes(c.int)
     );
+
+    // Se a categoria 'posicoes' estiver selecionada, inclua cartas geradas
+    // a partir do array POSITIONS usando imagens remotas (links).
+    if (cats.includes("posicoes")) {
+      const posCards = POSITIONS.map((p) => ({
+        cat: "posicoes",
+        int: "leve",
+        icon: "posicoes",
+        text: (p.name || "Posição") + (p.desc ? " — " + p.desc : ""),
+        positionImage: p.positionImage || DEFAULT_POSITION_IMAGE,
+        positionName: p.name || "Posição"
+      }));
+      filtered = filtered.concat(posCards);
+    }
+
     return shuffle(filtered);
   }
 
@@ -400,14 +617,14 @@ const CATEGORIES = [
        CATEGORIA
        ========================================= */
     $("#cardCategoryName").textContent =
-      cat ? cat.name : c.cat;
+      formatLabel(cat ? cat.name : c.cat);
     $("#cardCategoryIcon").innerHTML =
       cat ? cat.icon : "";
     /* =========================================
        INTENSIDADE
        ========================================= */
     $("#cardIntensity").textContent =
-      int ? int.name : c.int;
+      formatLabel(int ? int.name : c.int);
     /* =========================================
        ÍCONE / IMAGEM CENTRAL
        ========================================= */
@@ -439,6 +656,8 @@ const CATEGORIES = [
        TEXTO
        ========================================= */
     $("#cardText").textContent = c.text;
+     // Ajusta tamanho do texto se necessário para evitar barra de rolagem
+     adjustCardText();
     /* =========================================
        CONTADOR
        ========================================= */
@@ -465,7 +684,6 @@ const CATEGORIES = [
 
   function updateHUD() {
     $("#roundCount").textContent = state.round;
-    $("#scoreCount").textContent = state.score;
   }
 
   function updateTurn() {
@@ -497,22 +715,15 @@ const CATEGORIES = [
 
   // ---- Ações ----
   function actionNext() {
-    // Jogador concluiu a jogada: adiciona pontos, mostra confete e passa a vez
-    state.score += 10;
-    updateHUD();
-    showToast("Desafio concluído! +10 pontos");
-    burstParticles();
     nextTurn();
     drawCard();
+    showToast("Próxima rodada.");
   }
 
   function actionAnother() {
-    // Trocar de carta penaliza pontuação
-    state.score = Math.max(0, state.score - 1);
-    updateHUD();
     state.cardNum--; // não conta como jogada nova no índice
     drawCard();
-    showToast("Outra carta — 1 ponto perdido.");
+    showToast("Outra carta.");
   }
 
   function actionSkip() {
@@ -521,17 +732,9 @@ const CATEGORIES = [
     showToast("Carta pulada.");
   }
 
-  function actionScore() {
-    state.score += 10;
-    updateHUD();
-    showToast("Desafio concluído! +10 pontos");
-    burstParticles();
-  }
-
   function actionRestart() {
     state.round = 1;
     state.cardNum = 0;
-    state.score = 0;
     state.turn = 1;
     state.deck = buildDeck();
     state.drawIndex = 0;

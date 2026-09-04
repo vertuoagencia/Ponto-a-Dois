@@ -74,14 +74,17 @@
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; height: 100%; }
 
 body {
   font-family: var(--font-body);
   color: var(--white);
   background: var(--ink-900);
   min-height: 100dvh;
+  height: 100%;
   overflow-x: hidden;
+  /* hide outer page scrollbar; each .screen will scroll internally */
+  overflow-y: hidden;
   line-height: 1.55;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -140,6 +143,7 @@ button { background: none; border: none; cursor: pointer; }
 #app {
   position: relative;
   min-height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -313,6 +317,10 @@ button { background: none; border: none; cursor: pointer; }
    CONFIGURAÇÃO
    ============================================================ */
 .screen--setup { justify-content: flex-start; }
+.screen--setup .setup-inner,
+.screen--game .game-inner {
+  margin: auto 0;
+}
 .setup-inner {
   width: 100%;
   max-width: 560px;
@@ -552,7 +560,12 @@ button { background: none; border: none; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: var(--sp-5);
-  padding-top: var(--sp-2);
+  padding: var(--sp-6);
+  /* Rectangle wrapper */
+  background: linear-gradient(180deg, rgba(255,245,248,0.02), rgba(23,9,16,0.18));
+  border: 1px solid var(--glass-brd);
+  border-radius: 18px;
+  box-shadow: var(--sh-card);
 }
 
 /* HUD */
@@ -652,7 +665,7 @@ button { background: none; border: none; cursor: pointer; }
   position: relative;
   width: 100%;
   max-width: 460px;
-  min-height: 360px;
+  height: 420px;
   padding: 36px 28px;
   border-radius: 28px;
   background: linear-gradient(180deg, rgba(255,245,248,0.04) 0%, rgba(23,9,16,0.22) 100%);
@@ -664,6 +677,7 @@ button { background: none; border: none; cursor: pointer; }
   align-items: center;
   text-align: center;
   gap: 28px;
+  overflow: hidden;
 }
 
 @keyframes cardIn {
@@ -680,21 +694,21 @@ button { background: none; border: none; cursor: pointer; }
   justify-content: space-between;
   width: 100%;
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  text-transform: none;
+  letter-spacing: 0;
 }
 .card-cat {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   color: var(--white);
-  font-weight: 600;
   padding: 6px 12px;
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(233,30,99,0.06), rgba(156,39,176,0.04));
   border: 1px solid rgba(233,30,99,0.16);
   box-shadow: 0 6px 24px rgba(233,30,99,0.04), 0 0 10px rgba(233,30,99,0.04) inset;
   font-size: 0.85rem;
+  text-transform: none;
 }
 .card-cat .card-category-icon {
   display: inline-flex;
@@ -731,8 +745,8 @@ button { background: none; border: none; cursor: pointer; }
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
   font-size: 0.82rem;
+  text-transform: none;
 }
 .card-int .int-icon { display: inline-flex; width:18px; height:18px; color: var(--red-300); filter: drop-shadow(0 6px 18px rgba(233,30,99,0.18)); }
 .card-icon {
@@ -761,19 +775,26 @@ button { background: none; border: none; cursor: pointer; }
   to   { transform: translateY(-6px); }
 }
 .card-text {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 3.8vw, 1.9rem);
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 3.1vw, 1.2rem);
+  font-weight: 300;
   line-height: 1.35;
   max-width: 420px;
   color: #fff7fb;
   text-shadow: 0 6px 30px rgba(194,24,91,0.06);
   padding: 0 6px;
+  /* Prevent internal scrollbar — JS will reduce font size for long text */
+  overflow: visible;
+  flex: 0 1 auto;
 }
+
+/* Classes applied by JS when text is too long */
+.card-text.text--small { font-size: 0.95rem; }
+.card-text.text--xsmall { font-size: 0.85rem; }
 .card-bottom {
   margin-top: auto;
   width: 100%;
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--muted-2);
   letter-spacing: 1px;
   display: flex;
@@ -840,9 +861,12 @@ button { background: none; border: none; cursor: pointer; }
 /* Ações do jogo */
 .game-actions {
   display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--sp-2);
   align-items: center;
+}
+.game-actions .btn {
+  width: 100%;
 }
 .game-actions .btn--soft { padding: 14px 8px; font-size: 0.9rem; }
 .game-secondary {
@@ -1065,3 +1089,4 @@ button { background: none; border: none; cursor: pointer; }
 .field input {
   padding-right: 50px;
 }
+
